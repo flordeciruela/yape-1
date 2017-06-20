@@ -9,3 +9,6 @@ Morado - Entrada de números : #49233b
 Morado light : #451e36
 Morado dark : #38052a
 */
+* {
+	font-family: 'Roboto', sans-serif;
+}
