@@ -7,8 +7,15 @@ const render = (root) => {
 	switch(state.viewScreen) {
     case null:
         wrapper.append(Init(_ => render(root)));
+        $('.owl-carousel').owlCarousel({
+            margin:30,
+            loop:true,
+            items:1,
+            dots: true
+        });
         break;
     case "validateNumber":
+        $('.owl-theme').html("");
         wrapper.append(validateNumber(_ => render(root)));
         break;
 		case "validateCode":
@@ -25,11 +32,12 @@ const state = {
 }
 
 $( _ => {
-	/* //funcion que valida los parametros del req y retorna el resultado:
-	$.post('api/registerNumber', { phone: "123456789", terms: true }, function(response) {
+  /*
+ //funcion que valida los parametros del req y retorna el resultado:
+	$.post('api/registerNumber', { phone: "000000001", terms: true }, function(response) {
 		console.log(response);
 	});
-	*/
+*/
 	const root = $("#root");
 	render(root);
 });
