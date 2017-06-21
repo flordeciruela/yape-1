@@ -2,7 +2,7 @@
 
 const render = (root) => {
   root.empty();
-  const wrapper = $('<div class="wrapper"></div>');
+  const wrapper = $('<div class="wrapper row"></div>');
 
 	switch(state.viewScreen) {
     case null:
@@ -12,7 +12,7 @@ const render = (root) => {
         wrapper.append(validateNumber(_ => render(root)));
         break;
 		case "validateCode":
-				alert("Print next screen: Code register");
+				wrapper.append(validateCode(_ => render(root)));
     //default:
     //   recargar inicio
 	}

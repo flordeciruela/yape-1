@@ -12,3 +12,16 @@ Morado dark : #38052a
 * {
 	font-family: 'Roboto', sans-serif;
 }
+
+button {
+	background-color: #fbd43b;
+}
+
+label span {
+	color: #00c3a3;
+}
+
+/*screen2*/
+#number, #password {
+	padding-left: 60px;
+}
