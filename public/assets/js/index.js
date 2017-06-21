@@ -7,15 +7,8 @@ const render = (root) => {
 	switch(state.viewScreen) {
     case null:
         wrapper.append(Init(_ => render(root)));
-        $('.owl-carousel').owlCarousel({
-            margin:30,
-            loop:true,
-            items:1,
-            dots: true
-        });
         break;
     case "validateNumber":
-        $('.owl-theme').html("");
         wrapper.append(validateNumber(_ => render(root)));
         break;
 		case "validateCode":
@@ -28,7 +21,10 @@ const render = (root) => {
 }
 
 const state = {
-	viewScreen: null
+	viewScreen: null,
+  phone: null,
+  terms: false,
+  code: null
 }
 
 $( _ => {
@@ -40,4 +36,11 @@ $( _ => {
 */
 	const root = $("#root");
 	render(root);
+
+  $('.owl-carousel').owlCarousel({
+      margin:30,
+      loop:true,
+      items:1,
+      dots: true
+  });
 });

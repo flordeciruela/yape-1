@@ -1,14 +1,15 @@
 'use strict';
 const validateNumber = (update) => {
-	const container = $('<div></div>');
+	const container = $('<div class"row"></div>');
 	const img = $('<img src="assets/img/icons/phone.png">');
 	const h3 = $('<h3>Para comenzar validemos tu numero</h3>');
 	const text = $('<p>Recibirás un SMS con un código de validación.</p>');
-	const form = $('<form></form>');
+	const form = $('<form class="col s8"></form>');
 	const inputNum = $('<input type="text" required>');
-	const checkTerms = $('<input type="checkbox"><span> Acepto los términos y condiciones.</span>');
+	const checkTerms = $('<input type="checkbox" class="filled-in" id="filled-in-box"/><label for="filled-in-box"> Acepto los términos y condiciones.</label>');
 	const errorText = $('<p class="error"></p>');
-	const btnContinue = $('<input type="submit" value="Continuar">');
+	const btnContinue = $('<button>Continuar</button>');
+	btnContinue.attr('disabled', true);
 
 	container.append(img);
 	container.append(h3);
@@ -19,26 +20,33 @@ const validateNumber = (update) => {
 	form.append(errorText);
 	form.append(btnContinue);
 
-	btnContinue.on('click', (e) => {
+	form.on("change",(e)=> {
 		e.preventDefault();
-
-		let validate = () => {
-			let result = "false";
-
- 			if (/^\d{9}$/.test(inputNum.val()) && checkTerms.prop('checked')) {
-				result = "true";
-			}
-			return result;
-		}
-		let validation = validate();
-
-		if (validation == "true") {
+		console.log(inputNum.val());
+		if(/^\d{9}$/.test(inputNum.val()) && checkTerms.prop('checked')){
+			btnContinue.attr('disabled', false);
 			errorText.text("");
-			state.viewScreen = "validateCode";
-			update();
-		} else {
+		}else{
+			btnContinue.attr('disabled', true);
 			errorText.text("Completar todos los campos de manera correcta.");
 		}
+	});
+
+	btnContinue.on("click",(e)=>{
+		e.preventDefault();
+
+		$.post("api/registerNumber", {phone: inputNum.val(), terms: true}, function(response){
+        if(response.success){
+          console.log(response.success);
+          state.phone = response.data.phone;
+          state.code = response.data.code;
+					state.viewScreen = "validateCode";
+					console.log(state.viewScreen);
+          //update();
+        }else{
+					errorText.text(response.message);
+        }
+    });
 
 	});
 
