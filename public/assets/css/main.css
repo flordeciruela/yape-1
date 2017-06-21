@@ -22,6 +22,15 @@ label span {
 }
 
 /*screen2*/
-#number, #password {
+#number, #code {
 	padding-left: 60px;
 }
+
+/*screen3*/
+/*
+p ~ #time {
+	display: inline-block;
+	position: relative;
+	bottom: 0;
+}
+*/

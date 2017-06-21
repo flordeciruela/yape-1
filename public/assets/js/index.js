@@ -13,6 +13,12 @@ const render = (root) => {
         break;
 		case "validateCode":
 				wrapper.append(validateCode(_ => render(root)));
+				break;
+		case "createUser":
+				wrapper.append(createUser(_ => render(root)));
+				break;
+		case "Setup":
+				wrapper.append(setup(_ => render(root)));
     //default:
     //   recargar inicio
 	}
@@ -24,7 +30,10 @@ const state = {
 	viewScreen: null,
   phone: null,
   terms: false,
-  code: null
+  code: null,
+	name: null,
+	email: null,
+	pass: null
 }
 
 $( _ => {
