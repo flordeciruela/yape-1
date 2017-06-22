@@ -27,7 +27,7 @@ const render = (root) => {
 				wrapper.append(CardPassword(_ => render(root)));
 				break;
 		case "Hello":
-				alert("hello");
+				wrapper.append(Hello(_ => render(root)));
     //default:
     //   recargar inicio
 	}
@@ -49,12 +49,7 @@ const state = {
 }
 
 $( _ => {
-  /*
- //funcion que valida los parametros del req y retorna el resultado:
-	$.post('api/registerNumber', { phone: "000000001", terms: true }, function(response) {
-		console.log(response);
-	});
-*/
+
 	const root = $("#root");
 	render(root);
 

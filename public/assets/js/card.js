@@ -93,7 +93,6 @@ const CardPassword = (update) => {
 	return container;
 }
 
-
 const postCard = (update, phone, cardNumber, cardMonth, cardYear, cardPassword) => {
 	$.post("api/registerCard", {phone: phone, cardNumber: cardNumber, cardMonth: cardMonth, cardYear: cardYear, cardPassword: cardPassword}, function(response){
 			if(response.success){
@@ -108,4 +107,41 @@ const postCard = (update, phone, cardNumber, cardMonth, cardYear, cardPassword) 
 			}
 			console.log(response);
 	});
+}
+
+const Hello = (update) => {
+	const container = $('<div class="center-align"></div>');
+	const header = $('<div class="col s12" id="header-hello text-white"></div>');
+	const iHeader = $('<img src="assets/img/icons/engine.png" style="width: 20px">');
+	const img = $('<img src="assets/img/icons/happy-face.png" class="col s4 offset-s4">');
+	const h5 = $('<h5 class="col s12">Hola</h5>');
+	const link = $('<div class="col s12"><img src="assets/img/icons/eye.png" style="width: 16px"><span>Mostrar Saldo</span></div>');
+	const main = $('<div class="col s12" id="main-hello text-white"></div>');
+	const acount = $('<span>ÚLTIMOS MOVIMIENTOS</span><img src="assets/img/icons/right-arrow-circular-button.png" style="width: 20px">');
+	const divider = $('<div class="divider"></div>');
+	const hero = $('<div class="col s11"></div>');
+	const ihero = $('<img src="assets/img/icons/icon.png" class="responsive-img">');
+	const h6 = $('<h6>¿Aún no realizas tu primer pago?</h6>');
+	const p = $('<p>Es rápido y sencillo</p>');
+	const pay = $('<div class="col s12"></div>');
+	const send = $('<div class="col s4"><img src="assets/img/icons/send.png" class="responsive-img"><span>ENVIAR PAGO</span></div>');
+	const receive = $('<div class="col s4 offset-s8"><img src="assets/img/icons/code-qr.png" class="responsive-img"><span>RECIBIR PAGO</span></div>');
+
+	container.append(header);
+	header.append(iHeader);
+	header.append(img);
+	header.append(h5);
+	header.append(link);
+	container.append(main);
+	main.append(acount);
+	main.append(divider);
+	main.append(hero);
+	hero.append(ihero);
+	hero.append(h6);
+	hero.append(p);
+	main.append(pay);
+	pay.append(send);
+	pay.append(receive);
+
+	return container;
 }

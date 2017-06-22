@@ -34,3 +34,11 @@ p ~ #time {
 	bottom: 0;
 }
 */
+/*screen hello*/
+#header-hello {
+	background-color: #451e36 !important;
+}
+
+#main-hello {
+	background-color: #38052a !important;
+}
