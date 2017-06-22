@@ -17,12 +17,14 @@ const render = (root) => {
 		case "createUser":
 				wrapper.append(createUser(_ => render(root)));
 				break;
-		case "Setup":
-				wrapper.append(setup(_ => render(root)));
+		case "Success":
+				wrapper.append(Success(_ => render(root)));
+				break;
+		case "CardRegister":
+				wrapper.append(CardRegister(_ => render(root)));
     //default:
     //   recargar inicio
 	}
-
   root.append(wrapper);
 }
 

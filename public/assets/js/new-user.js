@@ -60,7 +60,7 @@ const postUser = (update, phone, name, email, pass) => {
 			state.name = response.data.name;
 			state.email = response.data.email;
 			state.pass = response.data.password;
-			state.viewScreen = "Setup";
+			state.viewScreen = "Success";
 			console.log(state.viewScreen);
 			console.log(response);
 			update();
@@ -68,17 +68,4 @@ const postUser = (update, phone, name, email, pass) => {
 			errorText.text(response.message);
 		}
 	});
-}
-
-const setup = (update) => {
-	const container = $('<div class="center-align"></div>');
-	const img = $('<img src="assets/img/icons/check.png" class="col s6 offset-s3">');
-	const success = $('<h5 class="col s12">¡Bien!</h5>');
-	const h5 = $('<h5 class="col s12">Ahora puedes usar Yape</h5>');
-
-	container.append(img);
-	container.append(success);
-	container.append(h5);
-
-	return container;
 }
