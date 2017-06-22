@@ -28,8 +28,6 @@ const render = (root) => {
 				break;
 		case "Hello":
 				wrapper.append(Hello(_ => render(root)));
-    //default:
-    //   recargar inicio
 	}
   root.append(wrapper);
 }

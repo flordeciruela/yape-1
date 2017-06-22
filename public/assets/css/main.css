@@ -55,10 +55,11 @@ div#success {
 }
 
 /*screen hello*/
-div#hello {
+div#hello.col {
 	background-color: #451e36 !important;
 	height: 600px;
 	overflow: hidden;
+	padding: 0 !important;
 }
 
 div#hello > div.col {
@@ -86,4 +87,15 @@ img#engine {
 	width: 20px;
 	margin-top: 15px;
 	margin-right: 15px;
+}
+
+@media screen and (min-width: 800px) {
+
+	div#hello {
+		height: 1300px;
+	}
+
+	div#success {
+		height: 950px;
+	}
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 const Success = (update) => {
-	const container = $('<div class="center-align valign-wrapper" id="success"></div>');
+	const container = $('<div class="center-align valign-wrapper col l12" id="success"></div>');
 	const wrap = $('<div class="col s12 text-purple"></div>');
 	const img = $('<img src="assets/img/icons/check.png" class="col s6 offset-s3">');
 	const success = $('<h5 class="col s12">¡Bien!</h5>');

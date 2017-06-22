@@ -32,7 +32,7 @@ const validateCode = (update) => {
 	}
 
 	form.on("keyup",(e)=> {
-		//e.preventDefault();
+
 		if(inputCode.val() == state.code) {
 			clearInterval(initTimer);
 			state.viewScreen = "createUser";

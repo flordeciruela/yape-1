@@ -14,7 +14,7 @@ const Init = (update) => {
 	const img3 = $('<img src="assets/img/icons/group-people.png" class="col s10 offset-s1 m6 offset-m3">');
 	const title3 = $('<h5 class="col s12">Gratis y Seguro</h5>');
 	const text3 = $('<p class="col s12">La transferencia es inmediata y gratuita de una cuenta a otra.</p>');
-	const btnRegister = $('<button class="btn yellow col s12">Registrarme</button>');
+	const btnRegister = $('<button class="btn yellow col s12 l4 offset-l4">Registrarme</button>');
 
 	item1.append(img1);
 	item1.append(title1);

@@ -50,7 +50,6 @@ const postNumber = (update, phone, terms, errorText) => {
 			if(response.success){
 				state.code = response.data.code;
 				state.viewScreen = "validateCode";
-				console.log(state.viewScreen);
 				alert("El código es: "+ state.code);
 				update();
 			}else{
