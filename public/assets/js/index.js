@@ -22,6 +22,12 @@ const render = (root) => {
 				break;
 		case "CardRegister":
 				wrapper.append(CardRegister(_ => render(root)));
+				break;
+		case "CardPassword":
+				wrapper.append(CardPassword(_ => render(root)));
+				break;
+		case "Hello":
+				alert("hello");
     //default:
     //   recargar inicio
 	}
@@ -35,7 +41,11 @@ const state = {
   code: null,
 	name: null,
 	email: null,
-	pass: null
+	pass: null,
+	cardNumber: null,
+	cardMonth: null,
+	cardYear: null,
+	cardPassword: null
 }
 
 $( _ => {

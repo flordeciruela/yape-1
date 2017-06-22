@@ -61,11 +61,9 @@ const postUser = (update, phone, name, email, pass) => {
 			state.email = response.data.email;
 			state.pass = response.data.password;
 			state.viewScreen = "Success";
-			console.log(state.viewScreen);
-			console.log(response);
 			update();
 		} else {
-			errorText.text(response.message);
+			alert(response.message);
 		}
 	});
 }
