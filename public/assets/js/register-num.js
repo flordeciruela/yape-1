@@ -1,6 +1,6 @@
 'use strict';
 const validateNumber = (update) => {
-	const container = $('<div class="center-align"></div>');
+	const container = $('<div class="center-align section"></div>');
 	const img = $('<img src="assets/img/icons/phone.png" class="col s6 offset-s3">');
 	const h5 = $('<h5 class="col s12">Para comenzar validemos tu número</h5>');
 	const text = $('<p class="col s12">Recibirás un SMS con un código de validación.</p>');

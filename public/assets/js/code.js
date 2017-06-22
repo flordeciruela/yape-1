@@ -1,6 +1,6 @@
 'use strict';
 const validateCode = (update) => {
-	const container = $('<div class="center-align"></div>');
+	const container = $('<div class="center-align section"></div>');
 	const img = $('<img src="assets/img/icons/message.png" class="col s6 offset-s3">');
 	const h5 = $('<h5 class="col s12">Ahora ingresa tu código</h5>');
 	const text = $('<p class="col s12">Enviamos un SMS con el código de validación al número <strong>'+state.phone+'</strong></p>');

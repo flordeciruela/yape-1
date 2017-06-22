@@ -1,7 +1,7 @@
 'use strict';
 
 const createUser = (update) => {
-	const container = $('<div class="center-align"></div>');
+	const container = $('<div class="center-align section"></div>');
 	const img = $('<img src="assets/img/icons/lockone.png" class="col s4 offset-s4">');
 	const h5 = $('<h5 class="col s12">Crea tu usuario Yape</h5>');
 	const text = $('<p class="col s12">Ingresa un nombre, email y clave de usuario.</p>');

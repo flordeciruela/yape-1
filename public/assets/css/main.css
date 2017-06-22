@@ -13,11 +13,33 @@ Morado dark : #38052a
 	font-family: 'Roboto', sans-serif;
 }
 
+hr {
+	border: none;
+	border-top: 1px solid #451e36;
+}
+
+div.section {
+	padding-top: 60px !important;
+}
+
+.light-gray-text {
+	color: #8f8f8f;
+}
+
+.text-purple {
+	color: #38052a;
+}
+
+.bullet-gray-text {
+	color: #f8f8f8;
+}
+
 button {
 	background-color: #fbd43b;
 }
 
-label span {
+label span,
+.text-green-a {
 	color: #00c3a3;
 }
 
@@ -26,19 +48,42 @@ label span {
 	padding-left: 60px;
 }
 
-/*screen3*/
-/*
-p ~ #time {
-	display: inline-block;
-	position: relative;
-	bottom: 0;
-}
-*/
-/*screen hello*/
-#header-hello {
-	background-color: #451e36 !important;
+/*success*/
+div#success {
+	background-color: #fbd43b !important;
+	height: 600px;
 }
 
-#main-hello {
+/*screen hello*/
+div#hello {
+	background-color: #451e36 !important;
+	height: 600px;
+	overflow: hidden;
+}
+
+div#hello > div.col {
+	padding: 0;
+}
+
+div#header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+div#main-hello {
 	background-color: #38052a !important;
+	height: 80%;
+	margin-top: 10px;
+	padding: 15px !important;
+}
+
+div#hero {
+	margin-top: 10px;
+	margin-bottom: 70px;
+}
+
+img#engine {
+	width: 20px;
+	margin-top: 15px;
+	margin-right: 15px;
 }

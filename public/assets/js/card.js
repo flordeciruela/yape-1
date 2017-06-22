@@ -1,6 +1,6 @@
 'use strict';
 const CardRegister = (update) => {
-	const container = $('<div class="center-align"></div>');
+	const container = $('<div class="center-align section"></div>');
 	const img = $('<img src="assets/img/icons/bcp-logo.png" class="col s6 offset-s3">');
 	const h5 = $('<h5 class="col s12">Registra tu tarjeta débito BCP</h5>');
 	const text = $('<p class="col s12">Por ahora sólo aceptamos cuentas de ahorro y/o corriente en soles.</p>');
@@ -55,7 +55,7 @@ const CardRegister = (update) => {
 
 const CardPassword = (update) => {
 	const lastCardNumbers = state.cardNumber[12]+state.cardNumber[13]+state.cardNumber[14]+state.cardNumber[15];
-	const container = $('<div class="center-align"></div>');
+	const container = $('<div class="center-align section"></div>');
 	const img = $('<img src="assets/img/icons/bcp-logo.png" class="col s6 offset-s3">');
 	const h5 = $('<h5 class="col s12">Ingresa la clave de tu tarjeta</h5>');
 	const text = $('<p class="col s12">Tarjeta <strong>****'+lastCardNumbers+'</strong></p>');
@@ -110,25 +110,25 @@ const postCard = (update, phone, cardNumber, cardMonth, cardYear, cardPassword) 
 }
 
 const Hello = (update) => {
-	const container = $('<div class="center-align"></div>');
-	const header = $('<div class="col s12" id="header-hello text-white"></div>');
-	const iHeader = $('<img src="assets/img/icons/engine.png" style="width: 20px">');
+	const container = $('<div id="hello"></div>');
+	const header = $('<div class="col s12 center-align" id="header"></div>');
+	const iHeader = $('<img src="assets/img/icons/engine.png" id="engine" class="right">');
 	const img = $('<img src="assets/img/icons/happy-face.png" class="col s4 offset-s4">');
-	const h5 = $('<h5 class="col s12">Hola</h5>');
-	const link = $('<div class="col s12"><img src="assets/img/icons/eye.png" style="width: 16px"><span>Mostrar Saldo</span></div>');
-	const main = $('<div class="col s12" id="main-hello text-white"></div>');
-	const acount = $('<span>ÚLTIMOS MOVIMIENTOS</span><img src="assets/img/icons/right-arrow-circular-button.png" style="width: 20px">');
-	const divider = $('<div class="divider"></div>');
-	const hero = $('<div class="col s11"></div>');
-	const ihero = $('<img src="assets/img/icons/icon.png" class="responsive-img">');
+	const h5 = $('<h5 class="col s12 bullet-gray-text">Hola</h5>');
+	const link = $('<div class="col s12 text-green-a"><img src="assets/img/icons/eye.png" style="width: 16px"><span> Mostrar Saldo</span></div>');
+	const main = $('<div class="col s12" id="main-hello"></div>');
+	const acount = $('<span class="left bullet-gray-text">ÚLTIMOS MOVIMIENTOS</span><img src="assets/img/icons/right-arrow-circular-button.png" class="right" style="width: 20px">');
+	const divider = $('<hr class="col s12">');
+	const hero = $('<div class="col s11 light-gray-text" id="hero"></div>');
+	const ihero = $('<img src="assets/img/icons/icon.png" class="responsive-img col s5">');
 	const h6 = $('<h6>¿Aún no realizas tu primer pago?</h6>');
-	const p = $('<p>Es rápido y sencillo</p>');
-	const pay = $('<div class="col s12"></div>');
-	const send = $('<div class="col s4"><img src="assets/img/icons/send.png" class="responsive-img"><span>ENVIAR PAGO</span></div>');
-	const receive = $('<div class="col s4 offset-s8"><img src="assets/img/icons/code-qr.png" class="responsive-img"><span>RECIBIR PAGO</span></div>');
+	const p = $('<h6>Es rápido y sencillo</h6>');
+	const pay = $('<div class="col s12 bullet-gray-text"></div>');
+	const send = $('<div class="col s3 center-align left"><img src="assets/img/icons/send.png" class="responsive-img"><span>ENVIAR PAGO</span></div>');
+	const receive = $('<div class="col s3 center-align right"><img src="assets/img/icons/code-qr.png" class="responsive-img"><span>RECIBIR PAGO</span></div>');
 
+	container.append(iHeader);
 	container.append(header);
-	header.append(iHeader);
 	header.append(img);
 	header.append(h5);
 	header.append(link);
