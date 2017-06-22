@@ -14,6 +14,7 @@ const CardRegister = (update) => {
 	const month = $('<input type="text" class="col s3" placeholder="Mes" maxlength="2" required>');
 	const slash = $('<span class="col s1">/</span>');
 	const year = $('<input type="text" class="col s3" placeholder="Año" maxlength="2" required>');
+	const errorText = $('<p class="red-text center-align"></p>');
 	const btnContinue = $('<button class="btn yellow disabled">CONTINUAR</button>');
 
 	container.append(img);
@@ -29,15 +30,17 @@ const CardRegister = (update) => {
 	inputCont2.append(month);
 	inputCont2.append(slash);
 	inputCont2.append(year);
+	form.append(errorText);
 	form.append(btnContinue);
 
 	form.on("change",(e)=> {
 		e.preventDefault();
-
+		errorText.text("");
 		if(/^\d{16}$/.test(inputCard.val()) && parseInt(year.val()) > 16 && parseInt(year.val()) < 25 && parseInt(month.val()) < 13 && parseInt(month.val()) > 0) {
 			btnContinue.removeClass("disabled");
 		} else if (!/^\d{16}$/.test(inputCard.val()) || parseInt(year.val()) < 17 || parseInt(year.val()) > 24 || parseInt(month.val()) < 1 || parseInt(month.val()) > 12) {
 			btnContinue.addClass("disabled");
+			errorText.text("Completar correctamente todos los campos.");
 		}
 	});
 
@@ -63,6 +66,7 @@ const CardPassword = (update) => {
 	const inputCont = $('<div class="input-field col s12"></div>');
 	const i = $('<img src="assets/img/icons/card.png" class="prefix" style="width: 20px">');
 	const cardPass = $('<input type="password" required>');
+	const errorText = $('<p class="red-text center-align"></p>');
 	const btnRegister = $('<button class="btn yellow disabled">REGISTRAR</button>');
 
 	container.append(img);
@@ -72,15 +76,17 @@ const CardPassword = (update) => {
 	form.append(inputCont);
 	inputCont.append(i);
 	inputCont.append(cardPass);
+	form.append(errorText);
 	form.append(btnRegister);
 
 	form.on("change",(e)=> {
 		e.preventDefault();
-
+		errorText.text("");
 		if(/^\d{6}$/.test(cardPass.val())) {
 			btnRegister.removeClass("disabled");
 		} else {
 			btnRegister.addClass("disabled");
+			errorText.text("Password debe tener mínimo 6 digitos.");
 		}
 	});
 

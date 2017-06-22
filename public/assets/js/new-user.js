@@ -8,14 +8,15 @@ const createUser = (update) => {
 	const form = $('<form class="col s12"></form>');
 	const imputCont1 = $('<div class="input-field col s12"></div>');
 	const iName = $('<img src="assets/img/icons/user.png" class="prefix" style="width: 20px">');
-	const name = $('<input type="text" id="icon_prefix" required>');
+	const name = $('<input type="text" id="icon_prefix" placeholder="Nombre" required>');
 	const imputCont2 = $('<div class="input-field col s12"></div>');
 	const iEmail = $('<img src="assets/img/icons/message-gray.png" class="material-icons prefix" style="width: 20px">');
-	const email = $('<input type="email" id="icon_prefix" class="validate" required>');
+	const email = $('<input type="email" id="icon_prefix" class="validate" placeholder="correo@ejemplo.com" required>');
 	const imputCont3 = $('<div class="input-field col s12"></div>');
 	const iPass = $('<img src="assets/img/icons/lock.png" class="prefix" style="width: 20px">');
-	const pass = $('<input type="password" id="password" required>');
+	const pass = $('<input type="password" id="password" placeholder="Ingresa clave de 6 dígitos" required>');
 	const warning = $('<p class="col s12 center-align">Cuida ésta clave como oro, es tu acceso a Yape.</p>');
+	const errorText = $('<p class="red-text center-align"></p>');
 	const btnAcount = $('<button class="btn yellow disabled">CREAR CUENTA</button>');
 
 	container.append(img);
@@ -32,15 +33,18 @@ const createUser = (update) => {
 	imputCont3.append(iPass);
 	imputCont3.append(pass);
 	form.append(warning);
+	form.append(errorText);
 	form.append(btnAcount);
 
 	form.on("change",(e)=> {
 		e.preventDefault();
+		errorText.text("");
 		var regEmail = /([a-zA-Z0–9]+)([\_\.\-{1}])?([a-zA-Z0–9]+)\@([a-zA-Z0–9]+)([\.])([a-zA-Z\.]+)/g;
 		if(name.val().length != 0 && regEmail.test(email.val()) && pass.val().length != 0) {
 			btnAcount.removeClass("disabled");
 		} else {
 			btnAcount.addClass("disabled");
+			errorText.text("Completar correctamente todos los campos.");
 		}
 	});
 
